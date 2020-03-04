@@ -1,0 +1,17 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+#指定项目名称
+PROJECT(HELLO)
+
+#将hello.cpp 赋值给SOURCE 变量
+SET(SOURCE ${PROJECT_SOURCE_DIR}/main.cpp)
+#AUX_SOURCE_DIRECTORY(. SOURCE)_
+#指定头文件目录
+#INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/)
+#指定链接库文件目录
+LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
+
+#将hello.cpp生成可执行文件hello 
+ADD_EXECUTABLE(hello ${SOURCE})
+
+#指定hello 链接库
+TARGET_LINK_LIBRARIES(hello test)
